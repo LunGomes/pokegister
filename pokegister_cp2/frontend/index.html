@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PokeManager TCG</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Raleway:wght@700;900&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="dashboard">
+    
+    <!-- TÍTULO POKÉBOLA -->
+    <div class="header-area pokeball-header">
+      <div class="pokeball-center"></div>
+      <h1>Pokegister</h1>
+    </div>  
+
+    <div class="panel search-area">
+      <h3>Buscar Pokémon</h3>
+      <input id="nomePokemon" placeholder="Nome ou número...">
+      <button onclick="buscarPokemonAPI()">Pesquisar</button>
+    </div>
+
+    <div class="panel result-area">
+      <h3>Adicionar Favorito</h3>
+      <div class="result-flex">
+        
+        <div class="tcg-card" style="margin: 0 auto;">
+          <div class="tcg-header">
+            <span id="preview-name">???</span>
+            <span id="preview-hp" class="tcg-hp">HP --</span>
+          </div>
+          <div id="preview-image" class="tcg-image-container">
+            <span style="font-size: 2rem; color: rgba(0,0,0,0.2);">?</span>
+          </div>
+          <div class="tcg-stats">
+            <span id="preview-type">Type: ???</span><br>
+            <span id="preview-weight">Weight: ???</span><br>
+            <span id="preview-height">Height: ???</span>
+          </div>
+        </div>
+
+        <div class="result-form">
+          <input id="name" placeholder="Nome" required>
+          <input id="type" placeholder="Tipo" required>
+          <input id="weight" placeholder="Peso" required>
+          <input id="height" placeholder="Altura" required>
+          <button onclick="cadastrarPokemon()">Salvar na Pokedex</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="filters-area">
+      <div class="panel">
+        <h3>Filtrar por Tipo</h3>
+        <input id="filtroTipo" placeholder="Ex: fire, water...">
+        <button onclick="filtrar()">Filtrar</button>
+      </div>
+      <div class="panel">
+        <h3>Filtrar por ID Local</h3>
+        <input id="buscarId" type="number" placeholder="ID no banco...">
+        <button onclick="buscarPorId()">Buscar</button>
+      </div>
+    </div>
+
+    <div class="panel favorites-area">
+      <h3>Meus Favoritos</h3>
+      <div id="lista" class="favorites-scroll">
+      </div>
+    </div>
+
+    <div class="panel create-team-area">
+      <h3>Montar Equipe</h3>
+      <input id="teamName" placeholder="Nome da Equipe (Ex: Red's Team)">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+        <input id="p1" placeholder="Pokémon 1">
+        <input id="p2" placeholder="Pokémon 2">
+        <input id="p3" placeholder="Pokémon 3">
+        <input id="p4" placeholder="Pokémon 4">
+        <input id="p5" placeholder="Pokémon 5">
+        <input id="p6" placeholder="Pokémon 6">
+      </div>
+      <button onclick="criarTime()" style="margin-top: 10px;">Registrar Equipe</button>
+    </div>
+
+    <div class="panel teams-area">
+      <h3>Equipes Registradas</h3>
+      <div id="listaTimes" style="display: flex; flex-direction: column; gap: 20px;">
+      </div>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
