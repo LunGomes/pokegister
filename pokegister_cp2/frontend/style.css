@@ -304,9 +304,7 @@ button:active {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-/* =========================================
-   📜 SCROLL PARA A ÁREA DE FAVORITOS (Horizontal)
-   ========================================= */
+
 .favorites-scroll {
   display: flex;
   gap: 15px;
@@ -324,12 +322,11 @@ button:active {
 .favorites-scroll::-webkit-scrollbar-thumb { 
   background: #2a75bb; 
   border-radius: 8px; 
-  border: 2px solid #e1e4e8; /* Cria um espaço entre a barra e o fundo */
+  border: 2px solid #e1e4e8; 
 }
 .favorites-scroll::-webkit-scrollbar-thumb:hover { 
   background: #1b4f91; 
 }
-
 
 #listaTimes {
   max-height: 310px; 
