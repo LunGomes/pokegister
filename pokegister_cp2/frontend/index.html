@@ -11,13 +11,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Raleway:wght@700;900&display=swap" rel="stylesheet">
   
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <div class="dashboard">
     
-    <!-- TÍTULO POKÉBOLA -->
     <div class="header-area pokeball-header">
       <div class="pokeball-center"></div>
       <h1>Pokegister</h1>
@@ -53,7 +54,7 @@
           <input id="type" placeholder="Tipo" required>
           <input id="weight" placeholder="Peso" required>
           <input id="height" placeholder="Altura" required>
-          <button onclick="cadastrarPokemon()">Salvar na Pokedex</button>
+          <button id="btnSalvarPokemon" onclick="salvarPokemon()">Salvar na Pokedex</button>
         </div>
       </div>
     </div>
@@ -88,7 +89,7 @@
         <input id="p5" placeholder="Pokémon 5">
         <input id="p6" placeholder="Pokémon 6">
       </div>
-      <button onclick="criarTime()" style="margin-top: 10px;">Registrar Equipe</button>
+      <button id="btnSalvarTime" onclick="salvarTime()" style="margin-top: 10px;">Registrar Equipe</button>
     </div>
 
     <div class="panel teams-area">

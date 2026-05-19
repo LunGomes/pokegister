@@ -94,8 +94,8 @@ h1, h2, h3 {
   background: #ffffff;
   border-radius: 12px;
   padding: 24px;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.12); /* Sombra mais forte para garantir visibilidade */
-  border: 2px solid #c4c9d1; /* Borda mais definida */
+  box-shadow: 0 6px 12px rgba(0,0,0,0.12);
+  border: 2px solid #c4c9d1; 
 }
 
 .panel h3 {
@@ -324,4 +324,69 @@ button:active {
 }
 #listaTimes::-webkit-scrollbar-thumb:hover { 
   background: #1b4f91; 
+}
+
+/* --- Botões de Ação: Pokémons Favoritos --- */
+.card-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.btn-action {
+  background-color: #f5d44f;
+  border: 2px solid transparent;
+  width: 45px;
+  height: 45px;
+  border-radius: 4px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.btn-action:hover {
+  transform: scale(1.1);
+  background-color: #e3c13b;
+}
+
+.btn-delete { 
+  color: #ffffff; 
+  border: 2px solid #ffffff;
+}
+
+.btn-edit { 
+  color: #000000;
+}
+
+.card-actions button {
+  position: relative;
+  z-index: 10;
+}
+
+.team-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.team-actions {
+  display: flex;
+  gap: 15px;
+  font-size: 1.2rem;
+}
+
+.team-actions i {
+  cursor: pointer;
+  color: #f5d44f;
+  transition: transform 0.2s, color 0.2s;
+}
+
+.team-actions i:hover {
+  transform: scale(1.2);
+  color: #ffffff;
 }
