@@ -1,6 +1,8 @@
 let editandoPokemonId = null;
 let editandoTimeId = null;
 
+const API_URL = "https://pokegister.onrender.com";
+
 // form buscar pokemon
 function buscarPokemonAPI() {
   fetch(`https://pokeapi.co/api/v2/pokemon/${document.getElementById("nomePokemon").value.toLowerCase().trim()}`)
@@ -31,7 +33,7 @@ function buscarPokemonAPI() {
 // form cadastrar ou editar favoritos 
 
 function salvarPokemon() {
-  const url = editandoPokemonId ? `http://localhost:8000/pokemons/${editandoPokemonId}` : "http://localhost:8000/pokemons";
+  const url = editandoPokemonId ? `${API_URL}/pokemons/${editandoPokemonId}` : `${API_URL}/pokemons`;
   const method = editandoPokemonId ? "PUT" : "POST";
 
   fetch(url, {
@@ -64,7 +66,7 @@ function salvarPokemon() {
 
 function deletarPokemon(id) {
   if(confirm("Deseja realmente excluir este Pokémon?")) {
-    fetch(`http://localhost:8000/pokemons/${id}`, { method: "DELETE" })
+    fetch(`${API_URL}/pokemons/${id}`, { method: "DELETE" })
       .then(() => carregar());
   }
 }
@@ -72,7 +74,7 @@ function deletarPokemon(id) {
 // edição pokemon
 
 function prepararEdicaoPokemon(id) {
-  fetch(`http://localhost:8000/pokemons/${id}`)
+  fetch(`${API_URL}/pokemons/${id}`)
     .then(res => {
       if(!res.ok) throw new Error("Erro ao buscar dados na API");
       return res.json();
@@ -103,7 +105,7 @@ function prepararEdicaoPokemon(id) {
 // render favoritos
 
 function carregar() {
-  fetch("http://localhost:8000/pokemons")
+  fetch(`${API_URL}/pokemons`)
     .then(res => res.json())
     .then(data => {
       document.getElementById("lista").innerHTML = "";
@@ -141,7 +143,7 @@ function carregar() {
 // filtro por id
 
 function buscarPorId() {
-  fetch(`http://localhost:8000/pokemons/${document.getElementById("buscarId").value}`)
+  fetch(`${API_URL}/pokemons/${document.getElementById("buscarId").value}`)
     .then(res => {
       if (!res.ok) throw new Error("Pokémon não encontrado na base.");
       return res.json();
@@ -180,7 +182,7 @@ function buscarPorId() {
 // filtro tipo pokemon
 
 function filtrar() {
-  fetch(`http://localhost:8000/pokemons?type=${document.getElementById("filtroTipo").value}`)
+  fetch(`${API_URL}/pokemons?type=${document.getElementById("filtroTipo").value}`)
     .then(res => res.json())
     .then(data => {
       document.getElementById("lista").innerHTML = "";
@@ -217,7 +219,7 @@ function filtrar() {
 // form salvar time 
 
 function salvarTime() {
-  const url = editandoTimeId ? `http://localhost:8000/teams/${editandoTimeId}` : "http://localhost:8000/teams";
+  const url = editandoTimeId ? `${API_URL}/teams/${editandoTimeId}` : `${API_URL}/teams`;
   const method = editandoTimeId ? "PUT" : "POST";
 
   fetch(url, {
@@ -250,7 +252,7 @@ function salvarTime() {
 // deletar time 
 function deletarTime(id) {
   if(confirm("Deseja realmente excluir esta Equipe?")) {
-    fetch(`http://localhost:8000/teams/${id}`, { method: "DELETE" })
+    fetch(`${API_URL}/teams/${id}`, { method: "DELETE" })
       .then(() => carregarTimes());
   }
 }
@@ -258,7 +260,7 @@ function deletarTime(id) {
 // edição time
 
 function prepararEdicaoTime(id) {
-  fetch(`http://localhost:8000/teams/${id}`)
+  fetch(`${API_URL}/teams/${id}`)
     .then(res => {
       if(!res.ok) throw new Error("Erro ao buscar dados na API");
       return res.json();
@@ -283,7 +285,7 @@ function prepararEdicaoTime(id) {
 // render times
 
 function carregarTimes() {
-  fetch("http://localhost:8000/teams")
+  fetch(`${API_URL}/teams`)
     .then(res => res.json())
     .then(data => {
       document.getElementById("listaTimes").innerHTML = "";
