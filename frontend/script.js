@@ -126,10 +126,10 @@ function carregar() {
             
             <div class="card-actions" style="display: flex; justify-content: center; gap: 10px; margin-top: 10px;">
               <button class="btn-action btn-edit" onclick="prepararEdicaoPokemon(${p.chave_identificadora})">
-                <i class="fa-solid fa-pen-to-square"></i>
+                <i class="fa-solid fa-pen-to-square" style="color:#dd1111;"></i>
               </button>
               <button class="btn-action btn-delete" onclick="deletarPokemon(${p.chave_identificadora})">
-                <i class="fa-regular fa-trash-can"></i>
+                <i class="fa-regular fa-trash-can" style="color:#dd1111;"></i>
               </button>
             </div>
           </div>
@@ -161,12 +161,14 @@ function buscarPorId() {
               Type: ${data.type}<br>Weight: ${data.weight}<br>Height: ${data.height}
             </div>
           </div>
+          
           <div class="card-actions">
-            <button class="btn-action btn-delete" onclick="deletarPokemon(${data.chave_identificadora})">
-              <i class="fa-regular fa-trash-can"></i>
-            </button>
             <button class="btn-action btn-edit" onclick="prepararEdicaoPokemon(${data.chave_identificadora})">
               <i class="fa-solid fa-pen-to-square"></i>
+            </button> 
+            
+            <button class="btn-action btn-delete" onclick="deletarPokemon(${data.chave_identificadora})">
+              <i class="fa-regular fa-trash-can"></i>
             </button>
           </div>
         </div>
@@ -200,10 +202,10 @@ function filtrar() {
             </div>
              <div class="card-actions">
               <button class="btn-action btn-delete" onclick="deletarPokemon(${p.chave_identificadora})">
-                <i class="fa-regular fa-trash-can"></i>
+                <i class="fa-regular fa-trash-can style="color: #dc3545;""></i>
               </button>
               <button class="btn-action btn-edit" onclick="prepararEdicaoPokemon(${p.chave_identificadora})">
-                <i class="fa-solid fa-pen-to-square"></i>
+                <i class="fa-solid fa-pen-to-square style="color: #dc3545;""></i>
               </button>
             </div>
           </div>
@@ -295,8 +297,8 @@ function carregarTimes() {
               <span>${t.name}</span>
               
               <span class="team-actions" style="display: flex; gap: 10px; align-items: center;">
-                <i class="fa-solid fa-pen-to-square" onclick="prepararEdicaoTime(${t.codigo_time})" style="cursor: pointer;" title="Editar Time"></i>
-                <i class="fa-regular fa-trash-can" onclick="deletarTime(${t.codigo_time})" style="cursor: pointer;" title="Excluir Time"></i>
+                <i class="fa-solid fa-pen-to-square" onclick="prepararEdicaoTime(${t.codigo_time})" style="cursor: pointer; color: white;" title="Editar Time"></i>
+                <i class="fa-regular fa-trash-can" onclick="deletarTime(${t.codigo_time})" style="cursor: pointer; color: white;" title="Excluir Time"></i>
               </span>
             </div>
 
